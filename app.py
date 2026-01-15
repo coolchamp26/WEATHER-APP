@@ -53,6 +53,10 @@ def index():
     """Serve the frontend."""
     return render_template('index.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('images/favicon.png')
+
 @app.route('/api/weather')
 def get_current_weather():
     """Get current weather by city."""
