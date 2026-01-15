@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atmosphere | Modern Weather</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="theme-sunny"> <!-- Default Theme -->
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-cloud-bolt"></i> Atmosphere
+            </div>
+            <div class="search-bar">
+                <input type="text" id="city-input" placeholder="Search city...">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="location-btn" title="Use My Location"><i class="fa-solid fa-location-crosshairs"></i></button>
+            </div>
+            <div class="controls">
+                <button id="unit-toggle" class="btn-glass">°C</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Current Weather -->
+            <section class="current-weather">
+                <div class="weather-header">
+                    <div>
+                        <h1 id="city-name">Loading...</h1>
+                        <p id="date-time">--</p>
+                    </div>
+                    <button id="favorite-btn" class="btn-icon"><i class="fa-regular fa-star"></i></button>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temp-container">
+                        <span id="temperature">--</span><span class="unit">°</span>
+                        <div class="weather-condition">
+                            <img id="weather-icon" src="" alt="">
+                            <span id="condition-text">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details-grid">
+                    <div class="detail-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div>
+                            <p>Humidity</p>
+                            <h4 id="humidity">--%</h4>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <div>
+                            <p>Wind</p>
+                            <h4 id="wind-speed">-- km/h</h4>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-eye"></i>
+                        <div>
+                            <p>Visibility</p>
+                            <h4 id="visibility">-- km</h4>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <div>
+                            <p>Pressure</p>
+                            <h4 id="pressure">-- hPa</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar / Forecast -->
+            <aside class="sidebar">
+                <div class="favorites-section">
+                    <h3>Favorites</h3>
+                    <ul id="favorites-list">
+                        <!-- Items injected by JS -->
+                    </ul>
+                </div>
+
+                <div class="forecast-section">
+                    <h3>5-Day Forecast</h3>
+                    <div id="forecast-container" class="forecast-list">
+                        <!-- Forecast items injected by JS -->
+                    </div>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="loader-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="toast hidden">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span id="error-msg">Error message</span>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
