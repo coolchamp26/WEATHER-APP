@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atmosphere | Modern Weather</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +15,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body class="theme-sunny"> <!-- Default Theme -->
-    
+
     <div class="app-container">
         <!-- Header -->
         <header>
@@ -24,7 +27,8 @@
             <div class="search-bar">
                 <input type="text" id="city-input" placeholder="Search city...">
                 <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button id="location-btn" title="Use My Location"><i class="fa-solid fa-location-crosshairs"></i></button>
+                <button id="location-btn" title="Use My Location"><i
+                        class="fa-solid fa-location-crosshairs"></i></button>
             </div>
             <div class="controls">
                 <button id="unit-toggle" class="btn-glass">°C</button>
@@ -117,4 +121,5 @@
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>
