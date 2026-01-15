@@ -75,5 +75,3 @@ weather-app/
 
 Never commit your `.env` file containing real API keys to version control.
 
----
-Built with ❤️ by Antigravity
